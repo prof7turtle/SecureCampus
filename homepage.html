@@ -1,21 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SecureCampus</title>
-  <style>
-    body {
-      background-color: #fff;
-      color: #333;
-      text-align: center;
-      padding: 50px;
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCampus - Face Recognition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <h1>Welcome to the homepage!</h1>
-  <p>You have successfully logged in to SecureCampus</p>
+    <div class="screen">
+        <div class="container">
+            <!-- Header Section -->
+            <header class="header">
+                <div class="logo">
+                    <h1>SmartCampus</h1>
+                </div>
+                <div class="theme-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Face Recognition Section -->
+                <section class="face-recognition-section">
+                    <div class="scan-box">
+                        <div class="scan-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h2>Face Recognition</h2>
+                        <p>Click the button below to start face scanning</p>
+                        <button class="scan-button" id="scanButton">
+                            <i class="fas fa-camera"></i>
+                            Scan Face
+                        </button>
+                    </div>
+
+                    <!-- Camera Container -->
+                    <div class="camera-container" id="cameraContainer" style="display: none;">
+                        <div class="camera-box">
+                            <video id="videoElement" autoplay></video>
+                            <button class="stop-button" id="stopCamera">
+                                <i class="fas fa-stop"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result Box -->
+                    <div class="result-box" id="resultBox" style="display: none;">
+                        <div class="result-content">
+                            <div class="result-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="result-details">
+                                <h3>Face Recognition Result</h3>
+                                <div id="recognitionResult"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student Details Box -->
+                    <div class="student-details" id="studentDetails" style="display: none;">
+                        <div class="student-header">
+                            <div class="student-photo">
+                                <img id="studentPhoto" src="Images/profile.jpg" alt="Student Photo">
+                            </div>
+                            <div class="student-info">
+                                <h3 id="studentName">Student Name</h3>
+                                <p id="studentId">Student ID</p>
+                            </div>
+                        </div>
+                        <div class="student-body">
+                            <div class="info-row">
+                                <span class="label">Department:</span>
+                                <span id="studentDepartment" class="value">Department Name</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Year:</span>
+                                <span id="studentYear" class="value">Year</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Entry Time:</span>
+                                <span id="entryTime" class="value">Time</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>&copy; 2024 SmartCampus. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
